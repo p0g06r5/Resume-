@@ -1,0 +1,2 @@
+import { test, expect } from '@playwright/test';
+test('core portfolio flow',async({page})=>{await page.goto('./');await expect(page.getByRole('heading',{name:'Pawan Ghimire'})).toBeVisible();await page.getByRole('button',{name:/Ask Pawan/i}).click();await expect(page.getByLabel(/portfolio assistant/i)).toBeVisible();await page.getByRole('button',{name:/About Me/i}).click();await expect(page.getByRole('button',{name:/Tell me about yourself/i})).toBeVisible();});

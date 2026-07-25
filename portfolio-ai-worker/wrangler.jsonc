@@ -1,0 +1,10 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "pawan-portfolio-assistant",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-07-24",
+  "ai": { "binding": "AI" },
+  "vars": {
+    "ALLOWED_ORIGINS": "http://localhost:5173,https://p0g06r5.github.io"
+  }
+}
