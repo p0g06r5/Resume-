@@ -14,3 +14,12 @@
 [data-theme="dark"] .chat-input input::placeholder{color:rgba(255,255,255,.6)}
 [data-theme="dark"] .chat-input input,[data-theme="dark"] .chat-input button{color:rgba(255,255,255,.94)}
 .chat-panel :focus{outline:3px solid rgba(5,150,150,.18);outline-offset:2px}
+
+/* Suggestion card styling to ensure visibility in both themes */
+.suggestion-card{display:inline-flex;gap:10px;align-items:center;padding:10px 12px;border-radius:12px;border:1px solid var(--rule,rgba(0,0,0,0.08));background:var(--surface,#fff);color:var(--text,#111);cursor:pointer;text-align:left}
+.suggestion-card .suggestion-icon{font-size:18px;opacity:.95}
+.suggestion-card .suggestion-label{font-weight:700;font-size:14px;color:inherit}
+
+/* Dark mode suggestion cards */
+[data-theme="dark"] .suggestion-card{background:rgba(255,255,255,0.03);border-color:rgba(255,255,255,0.06);color:rgba(255,255,255,0.95)}
+[data-theme="dark"] .suggestion-card .suggestion-icon{opacity:1}
