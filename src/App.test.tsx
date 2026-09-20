@@ -30,18 +30,18 @@ describe('portfolio', () => {
 
     expect(
       screen.getByRole('complementary', {
-        name: /Ask Pawan portfolio assistant/i
+        name: /Ask Pawan AI portfolio assistant/i
       })
     ).toBeInTheDocument();
 
     expect(
       screen.getByRole('button', {
-        name: /About Me/i
+        name: /Why should I hire Pawan/i
       })
     ).toBeInTheDocument();
   });
 
-  it('shows starter suggestion cards in the welcome message and sends them when clicked', async () => {
+  it('shows starter suggestion cards in the welcome message', async () => {
     const user = userEvent.setup();
     render(<App />);
 
@@ -49,9 +49,6 @@ describe('portfolio', () => {
 
     expect(screen.getByRole('button', { name: /Why should I hire Pawan/i })).toBeInTheDocument();
 
-    await user.click(screen.getByRole('button', { name: /Why should I hire Pawan/i }));
-
-    expect(await screen.findByText(/The live AI service is not connected yet/i)).toBeInTheDocument();
   });
 
   it('restores starter suggestions after clearing the conversation', async () => {

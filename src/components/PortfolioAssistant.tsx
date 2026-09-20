@@ -59,6 +59,8 @@ function renderInlineMarkdown(text: string): ReactNode[] {
   });
 }
 
+// Exported for rendering tests; this helper is not a React Fast Refresh boundary.
+// eslint-disable-next-line react-refresh/only-export-components
 export function renderMessageContent(text: string): ReactNode {
   const paragraphs = text
     .split(/\n{2,}/)
@@ -187,7 +189,9 @@ export function PortfolioAssistant() {
   const abortRef = useRef<AbortController | null>(null);
 
   useEffect(() => {
-    endRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (typeof endRef.current?.scrollIntoView === 'function') {
+      endRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
   }, [messages, busy]);
 
   useEffect(() => () => abortRef.current?.abort(), []);
